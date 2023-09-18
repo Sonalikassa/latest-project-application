@@ -1,0 +1,35 @@
+<div class="projectdetails-container">
+    <button class="action-button" style="float: right;" (click)="goback()">Back</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Client</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Assigned Manager</th>
+          <th>Attachments</th>
+          <th>Remarks</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projectDetails"> 
+          <td>{{ project.name }}</td>
+          <td>{{ project.client }}</td>
+          <td>{{ project.start_date | date:'medium' }}</td>
+          <td>{{ project.end_date | date:'medium'}}</td>
+          <td>{{ project.assigned_manager }}</td>
+          <td>
+            <a [href]="project.attachments" target="_blank">{{ project.attachments }}</a>
+          </td>
+          <td>{{ project.remarks }}</td>
+          <td>
+            <button class="action-button" (click)="onCompleted()">Complete</button>
+            <button class="action-button" (click)="onRejected()">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

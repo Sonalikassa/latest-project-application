@@ -1,0 +1,16 @@
+<body class="full-screen-bg">
+    <div class="login-container">
+        <form (ngSubmit)="onLoginSubmit()">
+          <h2>Login</h2>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password" required>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </body>
